@@ -1,0 +1,16 @@
+[Unit]
+Description=Container Monitor Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/aritra/Downloads/projects/Onsites-2/main.py
+WorkingDirectory=/home/aritra/Downloads/projects/Onsites-2
+Restart=always
+User=aritra
+Group=aritra
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=container-monitor
+
+[Install]
+WantedBy=multi-user.target
